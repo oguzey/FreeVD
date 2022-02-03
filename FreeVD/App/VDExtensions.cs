@@ -44,7 +44,7 @@ namespace FreeVD
         {
             if (desktopNumber < 1)
             {
-                MessageBox.Show($"Error: Virtual Desktop number is negative: {desktopNumber}");
+                MessageBox.Show($"Error: Virtual Desktop number is less: {desktopNumber}");
                 return;
             }
             Window.EnsureDesktops(desktopNumber);
