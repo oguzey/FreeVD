@@ -24,7 +24,7 @@ namespace FreeVD
         [JsonIgnore]
         public List<Window> PinnedWindows = new List<Window>();
 
-        private const string SETTINGS_FILENAME = @"m4rc.us\FreeVD\settings.json";
+        private const string SETTINGS_FILENAME = @"FreeVD\settings.json";
 
         private static string SettingsFilename()
         {

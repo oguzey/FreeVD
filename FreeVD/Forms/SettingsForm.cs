@@ -173,6 +173,7 @@ namespace FreeVD
                 HotkeyList.Items.Add(item);
             }
         }
+
     }
 
     public static class ListViewItemExtensions

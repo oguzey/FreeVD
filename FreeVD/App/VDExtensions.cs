@@ -42,9 +42,25 @@ namespace FreeVD
 
         public static void GotoDesktop(int desktopNumber)
         {
+            if (desktopNumber < 1)
+            {
+                MessageBox.Show($"Error: Virtual Desktop number is negative: {desktopNumber}");
+                return;
+            }
             Window.EnsureDesktops(desktopNumber);
             User32.SetForegroundWindow(Window.GetTaskbar().Handle);
-            VirtualDesktop.GetDesktops()[desktopNumber - 1].Switch();
+            var desktops = VirtualDesktop.GetDesktops();
+            if (desktops == null)
+            {
+                MessageBox.Show("Error: Could not find any Virtual Desktop");
+                return;
+            }
+            if (desktops.Count() < desktopNumber)
+            {
+                MessageBox.Show($"Error: Could not switch to Virtual Desktop #{desktopNumber}");
+                return;
+            }
+            desktops[desktopNumber - 1].Switch();
         }
     }
 }

@@ -70,7 +70,7 @@ namespace FreeVD
 
         private void ConfigureOptions()
         {
-            NumDesktop.Enabled = SelectedAction.Text.EndsWith("To Desktop");
+            NumDesktop.Enabled = SelectedAction.Text.EndsWith("to Desktop");
             if (!NumDesktop.Enabled)
             {
                 Hotkey.DesktopNumber = 0;
